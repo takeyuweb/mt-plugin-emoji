@@ -1,0 +1,14 @@
+id: Emoji
+key: emoji
+name: Emoji
+version: 0.0.1
+author_name: Yuichi Takeuchi
+author_link: http://takeyu-web.com/
+description: 絵文字変換の為のモディファイアを提供します。
+
+tags:
+  modifier:
+    emoji: $Emoji::Emoji::Tags::_hdlr_emoji
+    emoji_typecast: $Emoji::Emoji::Tags::_hdlr_emoji_typecast
+
+
