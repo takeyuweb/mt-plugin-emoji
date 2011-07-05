@@ -36,7 +36,8 @@ sub _replace {
     my $static_path = $cfg->StaticWebPath.'plugins/Emoji/';
     my $base_path = $static_path.'images/emoticons/';
 
-    $str =~ s/\[E:([\w\-]{0,16})\]/<img class=\"emoticon $1\" src="$base_path@{[ $module->get_name( $1 ) ]}.gif">/g;
+    $str =~ s/((?:\G|>)[^<]*?)\[E:([\w\-]{0,16})\]/$1<img class=\"emoticon $2\" src="$base_path@{[ $module->get_name( $2 ) ]}.gif">/g;
+
     return $str;
 }
 
