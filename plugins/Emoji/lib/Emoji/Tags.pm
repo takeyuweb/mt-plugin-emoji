@@ -12,10 +12,16 @@ use Emoji::Table::TypeCast;
 sub _hdlr_emoji {
     my ( $str, $arg, $ctx ) = @_;
     
-    if ( $arg eq 'typecast' ) {
+    my $mode = lc $arg;
+
+    if ( $mode eq 'pc' || $mode eq 'typecast' || $mode eq 'all' ) {
         $str = _hdlr_emoji_typecast( $str, 1, $ctx);
-    } elsif ( $arg eq 'all' ) {
-        $str = _hdlr_emoji_typecast( $str, 1, $ctx );
+    } elsif ( $mode eq 'docomo' ) {
+        # TODO
+    } elsif ( $mode eq 'au' || $mode eq 'kddi' ) {
+        # TODO
+    } elsif ( $mode eq 'softbank' ) {
+        # TODO
     }
     
     return $str;
